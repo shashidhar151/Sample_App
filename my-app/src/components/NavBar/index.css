@@ -1,58 +1,84 @@
    .nav-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    width:99%;
-    background-color: #ffffff;
-    border-bottom: 2px solid #dcdcdc;
+    width:95%;
+    background-color: #2a2a30c2;
+    border-bottom: 2px solid #000000;
     margin-top: 0px;
-    padding: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-  }
-  .blackColorText {
-    color: #522f9e;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .website-logo {
-      width: 5%;
-      height: 60%;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 10px;
     }
-  }
+  
   .nav-sec {
     display: flex;
     list-style-type: none;
   }
   .nav-link {
-    font-size: 20px;
-    font-weight: 700;
-    padding-left: 6px;
-    padding-right: 6px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
     outline: none;
+    color: #fdfdfd;
     text-decoration: none;
-    padding-left: 20px;
-    padding-right: 40px;
+    padding-right: 10px;
     
   }
-  .toggle-btn {
-    border: none;
-    outline: none;
+  .nav-login-link {
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    background-color: transparent;
-    padding-right: 0px;
+    outline: none;
+    color: #fdfdfd;
+    text-decoration: none;
+    margin-left: 75px;
+    padding-right: 10px; 
   }
-  .toggle-icon {
-    width: 50%;
-    height: 50%;
-  }
-  @media screen and (min-width: 768px) {
-    .toggle-icon {
-      width: 50%;
-      height: 50%;
+  @media screen and (min-width: 639px) {
+    .nav-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width:97.4%;
+      background-color: #2a2a30c2;
+      border-bottom: 2px solid #000000;
+      margin-top: 0px;
+      padding: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      }
+    
+    .nav-sec {
+      display: flex;
+      list-style-type: none;
+      margin-left:580px;
+    }
+    .nav-link {
+      font-size: 20px;
+      font-weight: 700;
+      padding-left: 6px;
+      padding-right: 6px;
+      cursor: pointer;
+      outline: none;
+      color: #fdfdfd;
+      text-decoration: none;
+      padding-left: 40px;
+      padding-right: 40px;
+      
+    }
+    .nav-login-link {
+      font-size: 20px;
+      font-weight: 700;
+      padding-left: 6px;
+      padding-right: 6px;
+      cursor: pointer;
+      outline: none;
+      color: #fdfdfd;
+      text-decoration: none;
+      margin-left: auto;
+      padding-right: 40px; 
     }
   }
-  

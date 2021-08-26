@@ -22,7 +22,7 @@ const LoginForm =()=> (
   }
 
   const onSubmitSuccess = () => {
-    <Redirect to="/" />
+    <Redirect to="/users" />
   }
 
   const submitFailure = () => {
@@ -46,26 +46,17 @@ const LoginForm =()=> (
   }
 
     if (nameCheck && passCheck) {
-      return <Redirect to="/" />
+      return <Redirect to="/users" />
     }else{
     return (
-      <div className="login-form-container">
+      <div className="login-form-container">        
         <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-          className="login-website-logo-mobile-image"
-          alt="website logo"
-        />
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
+          src="https://www.goscience.eu/common/img/login.jpg"
           className="login-image"
           alt="website login"
         />
         <form className="form-container" onSubmit={submitForm}>
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            className="login-website-logo-desktop-image"
-            alt="website logo"
-          />
+<h1 className="login-heading">User Login</h1>
           <div className="input-container">      
         <label className="input-label" htmlFor="username">
           USERNAME

@@ -5,18 +5,28 @@
     align-items: center;
     height: 100vh;
     width: 90%;
-    max-width: 1110px;
-    margin: auto;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top:20px ;
+    
   }
-  
-  @media screen and (min-width: 992px) {
+  .login-heading{
+    font-size: 36px;
+    font-weight:700;
+    font-family: "Roboto";
+    color: #4c4953;
+    margin-top: 5px;
+    text-align: center;
+    outline: none;
+    width:110%;
+  }
+  @media screen and (min-width: 639px) {
     .login-form-container {
       flex-direction: row;
+      width:100%;
       justify-content: space-around;
-      padding-left: 20px;
-      padding-right: 20px;
+      background-color: #ffffffe8;
+      padding-top:20px ;
     }
   }
   
@@ -56,16 +66,18 @@
     align-items: center;
     padding: 20px;
     border-radius: 8px;
-    width: 100%;
+    width: 60%;
     max-width: 350px;
+    background-color: #979797;
   }
   
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 639px) {
     .form-container {
       width: 350px;
       flex-shrink: 0;
       box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
       padding: 64px 48px 64px 48px;
+      background-color: #a0a0a0d5;
     }
   }
   
@@ -83,25 +95,26 @@
     font-size: 12px;
     line-height: 16px;
     color: #475569;
+    
   }
   
   .username-input-field {
     font-size: 14px;
     height: 40px;
     border: 1px solid #d7dfe9;
-    background-color: #e2e8f0;
     color: #64748b;
     border-radius: 2px;
     margin-top: 5px;
     padding: 8px 16px 8px 16px;
     outline: none;
+    background-color: #d3d3d3;
   }
   
   .password-input-field {
     font-size: 14px;
     height: 40px;
     border: 1px solid #d7dfe9;
-    background-color: #e2e8f0;
+    background-color: #d1d1d1;
     color: #64748b;
     border-radius: 2px;
     margin-top: 5px;
@@ -112,13 +125,13 @@
   .login-button {
     font-family: 'Roboto';
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     color: #ffffff;
     height: 40px;
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
     margin-bottom: 2px;
-    background-color: #0b69ff;
+    background-color: #4a5058cb;
     border-radius: 8px;
     border: none;
     outline: none;

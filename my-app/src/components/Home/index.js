@@ -29,9 +29,9 @@ const Home =()=> (
     return ( 
       <div className="home-container">
       <NavBar/>
-      <div className="home-form-container">
+      <div className="home-form-Details-container">
       <h1 className="home-heading">Please Provide Your Details</h1>
-        <form className="form-container" onSubmit={submitForm}>
+        <form className="form-Details-container" onSubmit={submitForm}>
         <label className="home-input-label" htmlFor="name">
           Name :
         </label>
@@ -77,10 +77,9 @@ const Home =()=> (
           placeholder="Ex:Cricket"
         />
         {showSubmitError && <p className="error-message">**Please Enter All the Details</p>}
-          <button type="submit" className="login-button">
-            Submit :
+          <button type="submit" className="submit-button">
+            Submit
           </button>
-          
         </form>
       </div>
 </div>

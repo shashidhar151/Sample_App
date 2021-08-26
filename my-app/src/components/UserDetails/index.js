@@ -12,7 +12,7 @@ const UserDetails =()=>(
       <NavBar/>
       <ul className="user-list">
       {List.map(each => (
-            <UserCard List={each} key={each.ID} />
+            <UserCard eachList={each} key={each.ID} />
           ))}
         </ul>
            </div>
