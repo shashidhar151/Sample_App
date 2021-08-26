@@ -6,7 +6,7 @@ import './index.css'
 const Home =()=> (
     <UserDetailsContext.Consumer>
 {value => {
-          const {name,DOB,skills,hobbies,showSubmitError,onChangeName,onChangeDob,onChangeSkills,onChangeHobbies,onSubmitForm,onSubmitFailure} = value
+          const {name,DOB,skills,hobbies,showSubmitError,onChangeName,onChangeDob,onChangeSkills,onChangeHobbies,onSubmitForm} = value
 
 
         const ChangeName = event => {
@@ -22,72 +22,68 @@ const Home =()=> (
             onChangeHobbies(event.target.value)
           }
           
-          
-          const  SubmitFailure = () => {
-            onSubmitFailure()
-          }
-          
           const submitForm = event => {
             event.preventDefault()
             onSubmitForm()
           }
-
-    return (
-        
-      <div className="home-form-container">
+    return ( 
+      <div className="home-container">
       <NavBar/>
+      <div className="home-form-container">
+      <h1 className="home-heading">Please Provide Your Details</h1>
         <form className="form-container" onSubmit={submitForm}>
-        <label className="input-label" htmlFor="name">
-          NAME
+        <label className="home-input-label" htmlFor="name">
+          Name :
         </label>
         <input
           type="text"
           id="name"
-          className="name-input-field"
+          className="home-input-field "
           value={name}
           onChange={ChangeName}
-          placeholder="name"
+          placeholder="Name"
         />
-                       <label className="input-label" htmlFor="DOB">
-          Date of Birth
+                       <label className="home-input-label" htmlFor="DOB">
+          Date of Birth :
         </label>
         <input
           type="text"
           id="DOB"
-          className="name-input-field"
+          className="home-input-field"
           value={DOB}
           onChange={ChangeDob}
           placeholder="Ex:15 Aug 2021"
         />
-                <label className="input-label" htmlFor="skills">
-                Skills
+                <label className="home-input-label" htmlFor="skills">
+                Skills :
         </label>
         <input
           type="text"
           id="Skills"
-          className="name-input-field"
+          className="home-input-field"
           value={skills}
           onChange={ChangeSkills}
           placeholder="Skills"
         />
-                <label className="input-label" htmlFor="Hobbies">
-          Hobbies
+                <label className="home-input-label" htmlFor="Hobbies">
+          Hobbies :
         </label>
         <input
           type="text"
           id="Hobbies"
-          className="name-input-field"
+          className="home-input-field"
           value={hobbies}
           onChange={ChangeHobbies}
           placeholder="Ex:Cricket"
         />
+        {showSubmitError && <p className="error-message">**Please Enter All the Details</p>}
           <button type="submit" className="login-button">
-            Submit
+            Submit :
           </button>
-          {showSubmitError && <p className="error-message">*Please Enter All the Details</p>}
+          
         </form>
       </div>
-
+</div>
     )
 }}
   </UserDetailsContext.Consumer>

@@ -1,103 +1,53 @@
-import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 
+import UserDetailsContext from '../../Context/UserDetailsContext'
 import './index.css'
 const users={
     name:"shashi",
     pass:"shashi@123"
 }
-class LoginForm extends Component {
-  state = {
-    username: '',
-    password: '',
-    showSubmitError: false,
-    errorMsg: '',
-    nameCheck:false,
-    passCheck:false,
+
+const LoginForm =()=> (
+  <UserDetailsContext.Consumer>
+  {value => {
+            const {username,password,showLoginError,errorMsg,nameCheck,passCheck,onChangeNameCheck,onChangePassCheck,onChangeUsername,
+              onChangePassword,onSubmitLoginFailure} = value
+  
+  const changeUsername = event => {
+    onChangeUsername(event.target.value)
   }
 
-  onChangeUsername = event => {
-    this.setState({username: event.target.value})
+  const changePassword = eventPass => {
+    onChangePassword(eventPass.target.value)
   }
 
-  onChangePassword = event => {
-    this.setState({password: event.target.value})
+  const onSubmitSuccess = () => {
+    <Redirect to="/" />
   }
 
-  onSubmitSuccess = () => {
-    const {history} = this.props
-    history.replace('/')
+  const submitFailure = () => {
+    onSubmitLoginFailure()  
   }
 
-  onSubmitFailure = () => {
-    const {nameCheck} = this.state
-    if(nameCheck===true){
-        this.setState({showSubmitError: true, errorMsg:"*incorrect username"})
-    }else{
-        this.setState({showSubmitError: true, errorMsg:"*incorrect password"})
-    }
-    
-  }
-
-  submitForm = async event => {
+  const submitForm = async (event) => {
     event.preventDefault()
-    const {username, password,nameCheck,passCheck} = this.state
     if(username===users.name){
-        this.setState({nameCheck: true})
+      onChangeNameCheck()
     }
     if(password===users.pass){
-        this.setState({passCheck: true})
+      onChangePassCheck()
     }
+    console.log(nameCheck,passCheck)
     if (nameCheck && passCheck) {
-      this.onSubmitSuccess()
+      onSubmitSuccess()
     } else {
-      this.onSubmitFailure()
+      submitFailure(nameCheck,passCheck)
     }
   }
 
-  renderPasswordField = () => {
-    const {password} = this.state
-    return (
-      <>
-        <label className="input-label" htmlFor="password">
-          PASSWORD
-        </label>
-        <input
-          type="password"
-          id="password"
-          className="password-input-field"
-          value={password}
-          onChange={this.onChangePassword}
-          placeholder="shashi@123"
-        />
-      </>
-    )
-  }
-
-  renderUsernameField = () => {
-    const {username} = this.state
-    return (
-      <>
-        <label className="input-label" htmlFor="username">
-          USERNAME
-        </label>
-        <input
-          type="text"
-          id="username"
-          className="username-input-field"
-          value={username}
-          onChange={this.onChangeUsername}
-          placeholder="shashi"
-        />
-      </>
-    )
-  }
-
-  render() {
-    const {showSubmitError, errorMsg,nameCheck,passCheck} = this.state
     if (nameCheck && passCheck) {
       return <Redirect to="/" />
-    }
+    }else{
     return (
       <div className="login-form-container">
         <img
@@ -110,22 +60,46 @@ class LoginForm extends Component {
           className="login-image"
           alt="website login"
         />
-        <form className="form-container" onSubmit={this.submitForm}>
+        <form className="form-container" onSubmit={submitForm}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
             className="login-website-logo-desktop-image"
             alt="website logo"
           />
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
+          <div className="input-container">      
+        <label className="input-label" htmlFor="username">
+          USERNAME
+        </label>
+        <input
+          type="text"
+          id="username"
+          className="username-input-field"
+          value={username}
+          onChange={changeUsername}
+          placeholder="shashi"
+        />
+</div>
+          <div className="input-container">        <label className="input-label" htmlFor="password">
+          PASSWORD
+        </label>
+        <input
+          type="password"
+          id="password"
+          className="password-input-field"
+          value={password}
+          onChange={changePassword}
+          placeholder="shashi@123"
+        /></div>
           <button type="submit" className="login-button">
             Login
           </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+          {showLoginError && <p className="error-message">*{errorMsg}</p>}
         </form>
       </div>
     )
   }
-}
+}}
+</UserDetailsContext.Consumer>
+)
 
 export default LoginForm

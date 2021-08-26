@@ -1,23 +1,19 @@
-.navWhiteBgColor {
-    background-color: #ffffff;
-    border: 1px solid #dcdcdc;
-  }
-  .blackColorText {
-    color: #171f46;
-  }
-  .nav-header {
+   .nav-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width:99%;
+    background-color: #ffffff;
+    border-bottom: 2px solid #dcdcdc;
     margin-top: 0px;
-    padding: 10px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
   }
-  
-  .website-logo {
-    width: 18%;
-    height: 70%;
+  .blackColorText {
+    color: #522f9e;
   }
   
   @media screen and (min-width: 768px) {
@@ -38,12 +34,16 @@
     cursor: pointer;
     outline: none;
     text-decoration: none;
+    padding-left: 20px;
+    padding-right: 40px;
+    
   }
   .toggle-btn {
     border: none;
     outline: none;
     cursor: pointer;
     background-color: transparent;
+    padding-right: 0px;
   }
   .toggle-icon {
     width: 50%;

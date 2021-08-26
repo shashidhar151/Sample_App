@@ -3,9 +3,8 @@ import {Link} from 'react-router-dom'
 import './index.css'
 
 const NavBar = () => (
-        <nav className='nav-header navWhiteBgColor'>
-          <img className="website-logo" src='https://assets.ccbp.in/frontend/react-js/website-logo-dark-theme-img.png' alt="website logo" />
-          <ul className="nav-sec">
+        <nav className='nav-header'>
+ <ul className="nav-sec">
             <li>
               <Link to="/" className='nav-link blackColorText'>
                 Home

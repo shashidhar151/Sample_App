@@ -7,5 +7,11 @@ const UserDetailsContext = React.createContext({
   DOB:"",
   skills:"",
   hobbies:"",
+  username: '',
+  password: '',
+  showLoginError: false,
+  errorMsg: '',
+  nameCheck:false,
+  passCheck:false,
 })
 export default UserDetailsContext
