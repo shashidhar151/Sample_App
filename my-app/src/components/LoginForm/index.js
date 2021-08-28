@@ -10,7 +10,7 @@ const users={
 const LoginForm =()=> (
   <UserDetailsContext.Consumer>
   {value => {
-            const {username,password,showLoginError,errorMsg,nameCheck,passCheck,onChangeNameCheck,onChangePassCheck,onChangeUsername,
+            const {username,password,showLoginError,nameCheck,passCheck,onChangeNameCheck,onChangePassCheck,onChangeUsername,
               onChangePassword,onSubmitLoginFailure} = value
   
   const changeUsername = event => {
@@ -81,10 +81,10 @@ const LoginForm =()=> (
           onChange={changePassword}
           placeholder="shashi@123"
         /></div>
+        {(showLoginError) && <p className="error-message">*incorrect username or password</p>}
           <button type="submit" className="login-button">
             Login
-          </button>
-          {showLoginError && <p className="error-message">*{errorMsg}</p>}
+          </button>          
         </form>
       </div>
     )

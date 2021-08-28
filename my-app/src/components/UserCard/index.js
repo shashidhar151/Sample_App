@@ -6,12 +6,13 @@ const UserCard = props => (
   <UserDetailsContext.Consumer>
   {value => {
     const {removeCardItem} = value
-
   const {eachList} = props
   const {ID,Name, Dob, Skills, Hobbies} = eachList
+
   const onClickBtn = () => {
     removeCardItem(ID)
   }
+  
   return (
       <li className="product-item">
                 <div className="list-card">

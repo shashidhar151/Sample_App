@@ -7,7 +7,7 @@ body{
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
-  background-color: #8a888d;
+  background-color: #b1afb4;
   width:100%;
 }
 .home-heading{
@@ -95,7 +95,7 @@ body{
     height: 20px;
     border: 2px solid #d7dfe9;
     background-color: #e2e8f0;
-    color: #64748b;
+    color: #292222;
     margin-top: 5px;
     padding: 5px;
     width:80%;
@@ -121,11 +121,22 @@ body{
   .error-message {
     align-self: start;
     font-size: 12px;
-    margin-top: 3px;
+    padding-top: 5px;
     margin-bottom: 0px;
     font-family: 'Roboto';
-    font-size: 12px;
+    font-size: 16px;
     line-height: 16px;
     color: #ff0b37;
+    margin-left:25px;
   }
-  
+  .green{
+    align-self: start;
+    font-size: 12px;
+    padding-top: 5px;
+    margin-bottom: 0px;
+    margin-left:25px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    line-height: 16px;
+    color: rgb(42, 161, 31);
+  }

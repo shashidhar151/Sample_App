@@ -6,7 +6,7 @@ import './index.css'
 const Home =()=> (
     <UserDetailsContext.Consumer>
 {value => {
-          const {name,DOB,skills,hobbies,showSubmitError,onChangeName,onChangeDob,onChangeSkills,onChangeHobbies,onSubmitForm} = value
+          const {name,DOB,skills,hobbies,showSubmitError,onSubmitValues,onChangeName,onChangeDob,onChangeSkills,onChangeHobbies,onSubmitForm} = value
 
 
         const ChangeName = event => {
@@ -77,6 +77,7 @@ const Home =()=> (
           placeholder="Ex:Cricket"
         />
         {showSubmitError && <p className="error-message">**Please Enter All the Details</p>}
+        {(onSubmitValues) && <p className="green">Details are Submitted</p>}
           <button type="submit" className="submit-button">
             Submit
           </button>

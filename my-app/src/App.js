@@ -16,7 +16,7 @@ const initialList = [
     Skills:"HTML",
     Hobbies:"Cricket",},
     {ID:uuidv4(),Name:"Raju",
-    Dob:"15 May 2010",
+    Dob:"15 May 2010", 
     Skills:"CSS",
     Hobbies:"Football",},
   {
@@ -40,9 +40,10 @@ class App extends Component {
     username: '',
     password: '',
     showLoginError: false,
-    errorMsg: '',
+    selectedTab: 'home',
     nameCheck:false,
     passCheck:false,
+    onSubmitValues:false,
 }
 
 onChangeUsername = valueUser => {
@@ -61,7 +62,7 @@ onChangePassCheck = () => {
   this.setState({passCheck:true})
 }
 onSubmitLoginFailure = () => {
-    this.setState({showLoginError: true, errorMsg:"*incorrect username or password"})
+    this.setState({showLoginError: true})
 }
 
 onChangeName = event => {
@@ -94,7 +95,13 @@ onSubmitForm = () => {
   }else{
     this.onSubmitFailure() 
   }
-  console.log(detail)
+  if(name && DOB && skills && hobbies){
+  this.setState({showSubmitError: false,onSubmitValues:true}) 
+  }
+}
+
+onClickLogout=()=>{
+  this.setState({username: "",password:"",nameCheck:false,passCheck:false, showLoginError:false}) 
 }
 
 removeCardItem = async ID => {
@@ -103,20 +110,26 @@ removeCardItem = async ID => {
   const updatedUsersList = usersList.filter(
     each => each.ID !== ID,
   )
-  
   this.setState({usersList: updatedUsersList})
-  console.log(updatedUsersList)
+}
+
+onClickHome=()=>{
+  this.setState({selectedTab: "home"}) 
+}
+
+onClickUserDetails=()=>{
+  this.setState({selectedTab: "user"}) 
 }
 
   render() {
-    const {usersList,showSubmitError,name,DOB,skills,hobbies,username,password,showLoginError,errorMsg,nameCheck,passCheck}=this.state
+    const {usersList,showSubmitError,name,DOB,skills,hobbies,username,password,showLoginError,selectedTab,nameCheck,passCheck,onSubmitValues}=this.state
     
     return (
       <UserDetailsContext.Provider
-        value={{List:[...usersList],showSubmitError,name,DOB,skills,hobbies,username,password,showLoginError,errorMsg,nameCheck,passCheck, onChangeUsername:this.onChangeUsername,
+        value={{List:[...usersList],showSubmitError,name,DOB,skills,hobbies,username,password,showLoginError,selectedTab,nameCheck,passCheck,onSubmitValues, onChangeUsername:this.onChangeUsername,
           onChangePassword:this.onChangePassword ,onChangeNameCheck:this.onChangeNameCheck,onChangePassCheck:this.onChangePassCheck,onSubmitLoginFailure:this.onSubmitLoginFailure ,onChangeName:this.onChangeName,
           onChangeDob:this.onChangeDob,onChangeSkills:this.onChangeSkills,onChangeHobbies:this.onChangeHobbies,
-          onSubmitFailure:this.onSubmitFailure,onSubmitForm:this.onSubmitForm,removeCardItem:this.removeCardItem}}
+          onSubmitFailure:this.onSubmitFailure,onSubmitForm:this.onSubmitForm,removeCardItem:this.removeCardItem, onClickLogout:this.onClickLogout,onClickHome:this.onClickHome,onClickUserDetails:this.onClickUserDetails}}
       >
         <Switch>
           <Route exact path="/" component={Home} />

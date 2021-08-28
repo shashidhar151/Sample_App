@@ -4,7 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     width:95%;
-    background-color: #2a2a30c2;
+    background-color: #545458c2;
     border-bottom: 2px solid #000000;
     margin-top: 0px;
     padding: 10px;
@@ -18,12 +18,12 @@
   }
   .nav-link {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     outline: none;
-    color: #fdfdfd;
+    color: #423a3a;
     text-decoration: none;
-    padding-right: 10px;
+    padding-right: 20px;
     
   }
   .nav-login-link {
@@ -31,10 +31,24 @@
     font-weight: 500;
     cursor: pointer;
     outline: none;
-    color: #fdfdfd;
+    color: #ffffff;
     text-decoration: none;
-    margin-left: 75px;
-    padding-right: 10px; 
+padding:10px;
+    background-color:#8b8b8b;
+    border:2px solid #141313;
+    border-radius:18px;
+  }
+  .selectedTabItem{
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 6px;
+    padding-right: 6px;
+    cursor: pointer;
+    outline: none;
+    color: #9dbfff;
+    text-decoration: none;
+    padding-right: 10px;
+    text-decoration: underline;
   }
   @media screen and (min-width: 639px) {
     .nav-header {
@@ -43,7 +57,7 @@
       justify-content: center;
       align-items: center;
       width:97.4%;
-      background-color: #2a2a30c2;
+      background-color: #545458c2;
       border-bottom: 2px solid #000000;
       margin-top: 0px;
       padding: 15px;
@@ -58,27 +72,42 @@
     }
     .nav-link {
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 800;
       padding-left: 6px;
       padding-right: 6px;
       cursor: pointer;
       outline: none;
-      color: #fdfdfd;
+      color: #423a3a;
       text-decoration: none;
       padding-left: 40px;
-      padding-right: 40px;
-      
+      padding-right: 40px; 
     }
     .nav-login-link {
+      font-size: 25px;
+      font-weight: 700;
+      padding:15px; 
+      cursor: pointer;
+      outline: none;
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: auto;
+      background-color:#8b8b8b;
+      border:2px solid #141313;
+      border-radius:18px;
+ 
+    }
+    .selectedTabItem{
       font-size: 20px;
       font-weight: 700;
       padding-left: 6px;
       padding-right: 6px;
       cursor: pointer;
       outline: none;
-      color: #fdfdfd;
+      color: #ffffff;
       text-decoration: none;
-      margin-left: auto;
-      padding-right: 40px; 
+      padding-left: 40px;
+      padding-right: 40px;
+      text-decoration: underline;
     }
+
   }

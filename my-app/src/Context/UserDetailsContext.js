@@ -10,8 +10,9 @@ const UserDetailsContext = React.createContext({
   username: '',
   password: '',
   showLoginError: false,
-  errorMsg: '',
+  selectedTab: '',
   nameCheck:false,
   passCheck:false,
+  onSubmitValues:false
 })
 export default UserDetailsContext
